@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EA3AF448201A474200A5D9BF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA3AF447201A474200A5D9BF /* main.cpp */; };
+		EA3AF450201A474A00A5D9BF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3AF44F201A474A00A5D9BF /* OpenGL.framework */; };
+		EA3AF452201A475500A5D9BF /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3AF451201A475500A5D9BF /* libglfw.3.2.dylib */; };
+		EA3AF456201A480E00A5D9BF /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = EA3AF455201A480E00A5D9BF /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		EA3AF444201A474200A5D9BF /* graphics_assig_1_06 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = graphics_assig_1_06; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3AF447201A474200A5D9BF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EA3AF44F201A474A00A5D9BF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EA3AF451201A475500A5D9BF /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		EA3AF453201A479C00A5D9BF /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		EA3AF454201A47AC00A5D9BF /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		EA3AF455201A480E00A5D9BF /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		EAFF86AE201B987A00167845 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3AF452201A475500A5D9BF /* libglfw.3.2.dylib in Frameworks */,
+				EA3AF450201A474A00A5D9BF /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +54,7 @@
 			children = (
 				EA3AF446201A474200A5D9BF /* graphics_assig_1_06 */,
 				EA3AF445201A474200A5D9BF /* Products */,
+				EA3AF44E201A474A00A5D9BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +69,22 @@
 		EA3AF446201A474200A5D9BF /* graphics_assig_1_06 */ = {
 			isa = PBXGroup;
 			children = (
+				EA3AF455201A480E00A5D9BF /* glad.c */,
 				EA3AF447201A474200A5D9BF /* main.cpp */,
+				EA3AF453201A479C00A5D9BF /* fragment.glsl */,
+				EA3AF454201A47AC00A5D9BF /* vertex.glsl */,
+				EAFF86AE201B987A00167845 /* readme.txt */,
 			);
 			path = graphics_assig_1_06;
+			sourceTree = "<group>";
+		};
+		EA3AF44E201A474A00A5D9BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA3AF451201A475500A5D9BF /* libglfw.3.2.dylib */,
+				EA3AF44F201A474A00A5D9BF /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3AF448201A474200A5D9BF /* main.cpp in Sources */,
+				EA3AF456201A480E00A5D9BF /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +259,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -241,6 +272,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
